@@ -207,12 +207,12 @@ export default function App() {
       <footer className="text-center text-white/25 text-[10px] py-1 shrink-0">
         Made by{' '}
         <a 
-          href="https://maisondev-tan.vercel.app/" 
+          href="https://nanodev-tan.vercel.app/" 
           target="_blank" 
           rel="noopener noreferrer"
           className="text-white/40 hover:text-white/70 underline transition-colors"
         >
-          Maison.dev2025
+          NanoDev
         </a>
         {' '}with 😍
       </footer>

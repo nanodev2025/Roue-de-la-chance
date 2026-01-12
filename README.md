@@ -102,4 +102,4 @@ MIT - Libre d'utilisation et de modification.
 
 ---
 
-Made with 😍 by [Maison.dev2025](https://maisondev-tan.vercel.app/)
+Made with 😍 by [NanoDev](https://nanodev-tan.vercel.app/)

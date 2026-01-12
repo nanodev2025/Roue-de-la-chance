@@ -1,6 +1,6 @@
 import { useEffect, useCallback, memo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, PartyPopper, RotateCcw } from 'lucide-react';
+import { PartyPopper, RotateCcw } from 'lucide-react';
 import { getContrastTextColor, darkenColor } from '../utils/colors';
 
 /**
@@ -180,15 +180,6 @@ function WinnerModal({
                             rounded-[2rem] border-4 border-white/20 shadow-hard-xl
                             overflow-hidden">
               
-              {/* Bouton fermer */}
-              <button
-                onClick={handleClose}
-                className="absolute top-4 right-4 p-2 rounded-xl bg-white/10 
-                         hover:bg-white/20 transition-colors border-2 border-white/20 z-10"
-              >
-                <X className="w-5 h-5 text-white" />
-              </button>
-
               {/* Contenu */}
               <div className="p-6 md:p-8 text-center">
                 
