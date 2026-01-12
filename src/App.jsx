@@ -107,7 +107,7 @@ export default function App() {
   return (
     <div className="h-full flex flex-col overflow-hidden">
       {/* Header */}
-      <header className="flex items-center justify-between p-4 md:p-6">
+      <header className="flex items-center justify-between p-4 md:p-6 relative z-10">
         {/* Logo / Branding */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
