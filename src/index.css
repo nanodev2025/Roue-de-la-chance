@@ -1,0 +1,194 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Variables CSS personnalisées */
+:root {
+  --color-bg-primary: #2D1B69;
+  --color-bg-secondary: #462B9C;
+  --border-thick: 4px;
+}
+
+/* Reset et styles de base */
+* {
+  margin: 0px;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background: linear-gradient(135deg, #2D1B69 0%, #462B9C 50%, #5B3EC4 100%);
+  min-height: 100vh;
+  color: white;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Style "Cartoon" pour les boutons */
+@layer components {
+  .btn-cartoon {
+    @apply font-bold py-3 px-6 rounded-2xl border-4 border-black/30 
+           transition-all duration-150 ease-out
+           hover:scale-105 active:scale-95
+           shadow-hard active:shadow-none active:translate-x-1 active:translate-y-1;
+  }
+
+  .btn-cartoon-primary {
+    @apply btn-cartoon text-white font-black uppercase tracking-wide;
+    background: linear-gradient(180deg, #FF9F43 0%, #E67E22 50%, #D35400 100%);
+    border: 4px solid #A04000;
+    box-shadow: 
+      inset 0 2px 4px rgba(255, 255, 255, 0.3),
+      inset 0 -3px 6px rgba(0, 0, 0, 0.3),
+      4px 4px 0px rgba(0, 0, 0, 0.4);
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.4);
+  }
+  
+  .btn-cartoon-primary:hover {
+    background: linear-gradient(180deg, #FFAB5C 0%, #F39C12 50%, #E67E22 100%);
+    transform: scale(1.05);
+  }
+  
+  .btn-cartoon-primary:active {
+    background: linear-gradient(180deg, #D35400 0%, #A04000 50%, #873600 100%);
+    box-shadow: 
+      inset 0 2px 4px rgba(0, 0, 0, 0.3),
+      inset 0 -1px 2px rgba(255, 255, 255, 0.1),
+      2px 2px 0px rgba(0, 0, 0, 0.4);
+    transform: scale(0.98) translate(2px, 2px);
+  }
+
+  .btn-cartoon-danger {
+    @apply btn-cartoon bg-game-red text-white 
+           hover:bg-red-400;
+  }
+
+  .btn-cartoon-success {
+    @apply btn-cartoon bg-game-green text-white 
+           hover:bg-green-400;
+  }
+
+  /* Card cartoon style */
+  .card-cartoon {
+    @apply bg-white/10 backdrop-blur-sm rounded-3xl border-4 border-white/20 
+           shadow-hard-lg p-4;
+  }
+
+  /* Input cartoon style */
+  .input-cartoon {
+    @apply w-full px-4 py-3 rounded-xl border-4 border-black/20 
+           bg-white text-gray-800 font-semibold
+           focus:outline-none focus:border-game-yellow focus:ring-2 focus:ring-game-yellow/50
+           placeholder:text-gray-400 transition-all;
+  }
+}
+
+/* Animation du titre */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+.floating {
+  animation: float 3s ease-in-out infinite;
+}
+
+
+/* Style pour le scrollbar custom */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Animation pulse pour le bouton tourner */
+@keyframes pulse-glow {
+  0%, 100% { 
+    box-shadow: 0 0 20px rgba(254, 202, 87, 0.4),
+                4px 4px 0px rgba(0, 0, 0, 0.3);
+  }
+  50% { 
+    box-shadow: 0 0 40px rgba(254, 202, 87, 0.6),
+                4px 4px 0px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Style pour le triangle/flèche indicateur */
+.pointer-triangle {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 40px solid #FECA57;
+  filter: drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.3));
+  position: relative;
+}
+
+.pointer-triangle::before {
+  content: '';
+  position: absolute;
+  top: -44px;
+  left: -16px;
+  width: 0;
+  height: 0;
+  border-left: 16px solid transparent;
+  border-right: 16px solid transparent;
+  border-top: 32px solid #FFE082;
+}
+
+/* Modal overlay animation */
+.modal-overlay {
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .btn-cartoon {
+    @apply py-2 px-4 text-sm;
+  }
+  
+  .pointer-triangle {
+    border-left-width: 15px;
+    border-right-width: 15px;
+    border-top-width: 30px;
+  }
+  
+  .pointer-triangle::before {
+    top: -33px;
+    left: -12px;
+    border-left-width: 12px;
+    border-right-width: 12px;
+    border-top-width: 24px;
+  }
+}

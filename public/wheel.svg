@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Fond de la roue -->
+  <circle cx="50" cy="50" r="48" fill="#2D1B69" stroke="#1a0f40" stroke-width="2"/>
+  
+  <!-- Segments colorés -->
+  <path d="M50 50 L50 2 A48 48 0 0 1 91.6 25 Z" fill="#FF6B9D"/>
+  <path d="M50 50 L91.6 25 A48 48 0 0 1 91.6 75 Z" fill="#FF9F43"/>
+  <path d="M50 50 L91.6 75 A48 48 0 0 1 50 98 Z" fill="#FECA57"/>
+  <path d="M50 50 L50 98 A48 48 0 0 1 8.4 75 Z" fill="#5CD85A"/>
+  <path d="M50 50 L8.4 75 A48 48 0 0 1 8.4 25 Z" fill="#48DBFB"/>
+  <path d="M50 50 L8.4 25 A48 48 0 0 1 50 2 Z" fill="#54A0FF"/>
+  
+  <!-- Cercle central -->
+  <circle cx="50" cy="50" r="12" fill="#FECA57" stroke="#D4A83E" stroke-width="2"/>
+  
+  <!-- Brillance -->
+  <circle cx="47" cy="47" r="5" fill="rgba(255,255,255,0.4)"/>
+  
+  <!-- Bordure externe -->
+  <circle cx="50" cy="50" r="48" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="3"/>
+</svg>
