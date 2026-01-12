@@ -135,14 +135,14 @@ export default function App() {
       </header>
 
       {/* Contenu principal */}
-      <main className="flex-1 flex flex-col items-center justify-center px-2 py-0">
+      <main className="flex-1 flex flex-col items-center justify-center px-2 py-0 -mt-[8%]">
         {/* Titre */}
         <motion.h1
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
           className="text-2xl sm:text-3xl md:text-4xl font-bold text-center 
-                   text-white mb-4 md:mb-6 font-game floating
+                   text-white mb-2 md:mb-4 font-game floating
                    drop-shadow-lg px-4"
           style={{
             textShadow: '3px 3px 0px rgba(0,0,0,0.3)',

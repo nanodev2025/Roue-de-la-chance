@@ -193,7 +193,7 @@ function SettingsModal({
               initial="hidden"
               animate="visible"
               exit="exit"
-              className="w-full max-w-lg max-h-[85vh]
+              className="w-full max-w-xl max-h-[90vh]
                          bg-gradient-to-br from-bg-primary to-bg-secondary 
                          rounded-3xl border-4 border-white/20 shadow-hard-xl 
                          flex flex-col overflow-hidden pointer-events-auto"
@@ -213,11 +213,11 @@ function SettingsModal({
             </div>
 
             {/* Content - Scrollable */}
-            <div className="flex-1 overflow-y-auto p-4 md:p-6 space-y-6">
+            <div className="flex-1 overflow-y-auto p-3 md:p-6 space-y-3 md:space-y-5">
               
               {/* Section Titre */}
-              <div className="space-y-3">
-                <label className="text-sm font-bold text-white/80 uppercase tracking-wide">
+              <div className="space-y-1.5 md:space-y-3">
+                <label className="text-xs md:text-sm font-bold text-white/80 uppercase tracking-wide">
                   📝 Titre de la roue
                 </label>
                 <input
@@ -225,14 +225,14 @@ function SettingsModal({
                   value={title}
                   onChange={handleTitleChange}
                   placeholder="Ex: Qu'est-ce qu'on mange ?"
-                  className="input-cartoon"
+                  className="input-cartoon text-sm md:text-base py-2 md:py-3"
                   maxLength={MAX_TITLE_LENGTH}
                 />
               </div>
 
               {/* Section Ajouter */}
-              <div className="space-y-3">
-                <label className="text-sm font-bold text-white/80 uppercase tracking-wide">
+              <div className="space-y-1.5 md:space-y-3">
+                <label className="text-xs md:text-sm font-bold text-white/80 uppercase tracking-wide">
                   ➕ Ajouter une catégorie
                 </label>
                 <div className="flex gap-2">
@@ -242,7 +242,7 @@ function SettingsModal({
                     onChange={handleNewCategoryChange}
                     onKeyPress={(e) => handleKeyPress(e, handleAddCategory)}
                     placeholder="Nom de la catégorie..."
-                    className="input-cartoon flex-1"
+                    className="input-cartoon flex-1 text-sm md:text-base py-2 md:py-3"
                     maxLength={MAX_CATEGORY_NAME_LENGTH}
                   />
                   <button
@@ -250,24 +250,22 @@ function SettingsModal({
                     disabled={!canAddCategory}
                     className="btn-cartoon bg-game-green text-white hover:bg-green-400
                              disabled:opacity-50 disabled:cursor-not-allowed
-                             flex items-center gap-2"
+                             flex items-center gap-1 md:gap-2 py-2 md:py-3 px-3 md:px-6"
                   >
-                    <Plus className="w-5 h-5" />
+                    <Plus className="w-4 h-4 md:w-5 md:h-5" />
                     <span className="hidden sm:inline">Ajouter</span>
                   </button>
                 </div>
-                <p className="text-xs text-white/50">
-                  {categories.length}/{MAX_CATEGORIES} catégories • Min. {MIN_CATEGORIES}, Max. {MAX_CATEGORIES}
-                </p>
               </div>
 
               {/* Liste des catégories */}
-              <div className="space-y-3">
-                <label className="text-sm font-bold text-white/80 uppercase tracking-wide">
-                  🎨 Catégories ({categories.length})
+              <div className="space-y-2 md:space-y-3 flex-1">
+                <label className="text-xs md:text-sm font-bold text-white/80 uppercase tracking-wide flex items-center justify-between">
+                  <span>🎨 Catégories ({categories.length})</span>
+                  <span className="text-[10px] md:text-xs font-normal opacity-60">Min {MIN_CATEGORIES} • Max {MAX_CATEGORIES}</span>
                 </label>
                 
-                <div className="space-y-2 max-h-64 overflow-y-auto pr-2">
+                <div className="space-y-1.5 md:space-y-2 max-h-[40vh] overflow-y-auto pr-1">
                   <AnimatePresence mode="popLayout">
                     {categories.map((category, index) => (
                       <motion.div
